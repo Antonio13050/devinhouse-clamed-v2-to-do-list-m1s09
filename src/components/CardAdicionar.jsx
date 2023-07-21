@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 
-const CardAdicionar = (props) => {
+const CardAdicionar = ({ adicionarTarefa }) => {
     const [texto, setTexto] = useState("");
+
+    const handleAdicionar = () => {
+        adicionarTarefa(texto);
+    };
 
     return (
         <>
@@ -13,7 +17,7 @@ const CardAdicionar = (props) => {
                     setTexto(e.target.value);
                 }}
             />
-            <button onClick={props.adicionarTarefa}>Add</button>
+            <button onClick={handleAdicionar}>Add</button>
         </>
     );
 };
