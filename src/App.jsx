@@ -5,9 +5,7 @@ import { useState } from "react";
 import List from "./components/ListItem";
 
 function App() {
-    const [listaTarefas, setListaTarefas] = useState([
-        { id: 1, texto: "Adicionar tarefa", finalizado: false },
-    ]);
+    const [listaTarefas, setListaTarefas] = useState([]);
     function adicionarTarefa(texto) {
         if (!texto) {
             return;
