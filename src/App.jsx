@@ -6,6 +6,11 @@ import List from "./components/ListItem";
 
 function App() {
     const [listaTarefas, setListaTarefas] = useState([]);
+
+    const encerrarTarefa = (id) => {
+        const novaLista = listaTarefas.filter((tarefa) => tarefa.id !== id);
+        setListaTarefas(novaLista);
+    };
     function adicionarTarefa(texto) {
         if (!texto) {
             return;
@@ -27,6 +32,8 @@ function App() {
                     key={tarefa.id}
                     texto={tarefa.texto}
                     finalizado={tarefa.finalizado}
+                    encerrarTarefa={encerrarTarefa}
+                    id={tarefa.id}
                 />
             ))}
         </>

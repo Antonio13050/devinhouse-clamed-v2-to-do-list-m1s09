@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "../App.css";
 
-const ListItem = ({ texto, finalizado }) => {
+const ListItem = ({ texto, finalizado, encerrarTarefa, id }) => {
     const [finalizada, setFinalizada] = useState(finalizado);
     return (
         <div className="item">
@@ -19,6 +19,7 @@ const ListItem = ({ texto, finalizado }) => {
             <button onClick={() => setFinalizada(!finalizada)}>
                 Finalizar
             </button>
+            <button onClick={() => encerrarTarefa(id)}>Encerrar</button>
         </div>
     );
 };
